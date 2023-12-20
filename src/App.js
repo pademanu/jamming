@@ -1,8 +1,7 @@
 import './App.css';
-import TrackList from './components/TrackList'
 
 function App() {
-  const tracks = [
+  const songs = [
     {
       name: 'Song 1',
       artist: 'Artist 1',
@@ -28,7 +27,6 @@ function App() {
       </div>
       <div>
         <h1>Track Listing</h1>
-        <TrackList tracks={tracks} />
       </div>
       <div>
         <button>Save to Spotify</button>
