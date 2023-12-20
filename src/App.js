@@ -1,36 +1,40 @@
-import React, { useState } from 'react';
-import Playlist from './components/Playlist'; // Import the Playlist component
+import './App.css';
+import TrackList from './components/TrackList'
 
-const App = () => {
-  const [playlistName, setPlaylistName] = useState('My Playlist');
-  const [playlistTracks, setPlaylistTracks] = useState([]);
-
-  // Function to add a track to the playlist
-  const addTrackToPlaylist = (track) => {
-    // Check if the track is already in the playlist
-    if (!playlistTracks.some((playlistTrack) => playlistTrack.id === track.id)) {
-      const newPlaylistTracks = [...playlistTracks, track];
-      setPlaylistTracks(newPlaylistTracks);
+function App() {
+  const tracks = [
+    {
+      name: 'Song 1',
+      artist: 'Artist 1',
+      album: 'Album 1',
+      albumArt: 'URL_to_album_art_1'
+    },
+    {
+      name: 'Song 2',
+      artist: 'Artist 2',
+      album: 'Album 2',
+      albumArt: 'URL_to_album_art_2'
     }
-  };
-
-  // Function to remove a track from the playlist
-  const removeTrackFromPlaylist = (track) => {
-    const newPlaylistTracks = playlistTracks.filter((playlistTrack) => playlistTrack.id !== track.id);
-    setPlaylistTracks(newPlaylistTracks);
-  };
-
+  ];  
+  
   return (
     <div className="App">
-      <h1>Jammming</h1>
-      <Playlist
-        playlistName={playlistName}
-        playlistTracks={playlistTracks}
-        onAddTrack={addTrackToPlaylist}
-        onRemoveTrack={removeTrackFromPlaylist}
-      />
+      <header className="App-header">
+        <h1>Jamming!</h1>
+      </header>
+      <div>
+        <input />
+        <button>Search!</button>
+      </div>
+      <div>
+        <h1>Track Listing</h1>
+        <TrackList tracks={tracks} />
+      </div>
+      <div>
+        <button>Save to Spotify</button>
+      </div>
     </div>
   );
-};
+}
 
 export default App;
