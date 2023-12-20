@@ -11,3 +11,8 @@
   justify-content: center;
   color: red;
 }
+
+.columns {
+  display: flex;
+  justify-content: space-around
+}
