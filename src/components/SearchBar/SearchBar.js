@@ -8,7 +8,7 @@ const SearchBar = ({ searchText, handleSearchChange, handleSearchClick }) => {
         type="text"
         placeholder="Search..."
         value={searchText}
-        onChange={(e) => handleSearchChange(e.target.value)}
+        onChange={({target}) => handleSearchChange(target.value)}
       />
       <button onClick={handleSearchClick}>Search</button>
     </div>
